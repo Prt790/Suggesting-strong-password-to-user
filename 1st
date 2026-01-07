@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char p[100];
+    scanf("%s",p);
+    int i=0,d=0;
+    while(p[i]!='\0'){
+        d=d+1;
+        
+        i=i+1;
+    }
+    int t=0;
+    char c[26]="QWERTYUIOPLKJHGFDSAZXCVBNM";
+    char s[26]="qwertyuioplkjhgfdsazxcvbnm";
+    char n[10]="1234567890";
+    char sym[19]="`~!@#$%^&*()_+-=.,/";
+    for(int i=0;i<d;i++){
+        for(int j=0;j<26;j++){
+            if(p[i]==c[j]){
+                t = t+1;
+            }
+            
+        }
+    }
+    if(t==0){
+        printf("Add a capital letter to your password\n");
+    }
+    t=0;
+    for(int i=0;i<d;i++){
+        for(int j=0;j<26;j++){
+            if(p[i]==s[j]){
+                t = t+1;
+            }
+            
+        }
+    }
+    if(t==0){
+        printf("Add a small letter to your password\n");
+    }
+    t=0;
+    for(int i=0;i<d;i++){
+        for(int j=0;j<10;j++){
+            if(p[i]==n[j]){
+                t = t+1;
+            }
+            
+        }
+    }
+    if(t==0){
+        printf("Add a number to your password\n");
+    }
+    t=0;
+    for(int i=0;i<d;i++){
+        for(int j=0;j<19;j++){
+            if(p[i]==sym[j]){
+                t = t+1;
+            }
+            
+        }
+    }
+    if(t==0){
+        printf("Add a symbol to your password\n");
+    }
+    
+  
+    return 0;
+}
