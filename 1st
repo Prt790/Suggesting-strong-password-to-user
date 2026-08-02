@@ -2,7 +2,7 @@
 #include<string.h>
 int main(){
     char p[100];
-    scanf("%s",p);
+    scanf("%99s",p);
     int i=0,d=0;
     while(p[i]!='\0'){
         d=d+1;
@@ -10,56 +10,55 @@ int main(){
         i=i+1;
     }
     int t=0;
+    int c=0,s=0,n=0,u=0;
     char c[26]="QWERTYUIOPLKJHGFDSAZXCVBNM";
     char s[26]="qwertyuioplkjhgfdsazxcvbnm";
     char n[10]="1234567890";
     char sym[19]="`~!@#$%^&*()_+-=.,/";
-    /*for(int i=0;i<d;i++){
-        for(int j=0;j<26;j++){
+    for(int i=0;i<d;i++){
+        if(p[i]<65 && p[i]>90){
+            c=c+1;
+        }
+        else if(p[i]<97 && p[i]>122){
+            s=s+1;
+        }
+        else if(p[i]<48 && p[i]>57){
+            n=n+1;
+        }
+        else{
+            u=u+1;
+        }
+
+
+            
+        
+
+
+
+
+
+        /*for(int j=0;j<26;j++){
             if(p[i]==c[j]){
                 t = t+1;
             }
             
-        }
-    }*\
-    if(p[i]==
-    if(t==0){
+        }*\
+    }
+    
+    if(c==0){
         printf("Add a capital letter to your password\n");
     }
     t=0;
-    for(int i=0;i<d;i++){
-        for(int j=0;j<26;j++){
-            if(p[i]==s[j]){
-                t = t+1;
-            }
-            
-        }
-    }
-    if(t==0){
+
+    if(s==0){
         printf("Add a small letter to your password\n");
     }
-    t=0;
-    for(int i=0;i<d;i++){
-        for(int j=0;j<10;j++){
-            if(p[i]==n[j]){
-                t = t+1;
-            }
-            
-        }
-    }
-    if(t==0){
+
+    if(n==0){
         printf("Add a number to your password\n");
     }
-    t=0;
-    for(int i=0;i<d;i++){
-        for(int j=0;j<19;j++){
-            if(p[i]==sym[j]){
-                t = t+1;
-            }
-            
-        }
-    }
-    if(t==0){
+    
+    if(u==0){
         printf("Add a symbol to your password\n");
     }
     
